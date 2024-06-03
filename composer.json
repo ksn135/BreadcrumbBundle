@@ -13,12 +13,12 @@
         }
     ],
     "require":      {
-        "knplabs/knp-menu-bundle": "~2.0",
+        "knplabs/knp-menu-bundle": "~v3.4",
         "symfony/framework-bundle": ">2.1"
     },
     "require-dev": {
-        "symfony/symfony": "2.7.*",
-        "knplabs/knp-menu-bundle":"~2.0",
+        "symfony/symfony": ">6",
+        "knplabs/knp-menu-bundle":"~v3.4",
         "phpunit/phpunit": "~4.8"
     },
     "autoload":     {
