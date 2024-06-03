@@ -16,8 +16,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('cnerta_breadcrumb')
+        $treeBuilder = new TreeBuilder('cnerta_breadcrumb');
+        $node        = $treeBuilder->getRootNode();
+        $node
                 ->children()
                     ->arrayNode('twig')
                         ->addDefaultsIfNotSet()
