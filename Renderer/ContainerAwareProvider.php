@@ -18,7 +18,7 @@ class ContainerAwareProvider implements RendererProviderInterface
         $this->defaultRenderer = $defaultRenderer;
     }
 
-    public function get($name = null)
+    public function get(?string $name = null)
     {
         if (null === $name) {
             $name = $this->defaultRenderer;
