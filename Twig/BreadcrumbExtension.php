@@ -3,8 +3,10 @@
 namespace Cnerta\BreadcrumbBundle\Twig;
 
 use Knp\Menu\ItemInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class BreadcrumbExtension extends \Twig_Extension
+class BreadcrumbExtension extends AbstractExtension
 {
     private $helper;
 
@@ -19,8 +21,8 @@ class BreadcrumbExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('cnerta_breadcrumb_get', array($this, 'get')),
-            new \Twig_SimpleFunction('cnerta_breadcrumb_render', array($this, 'render'), array('is_safe' => array('html'))),
+            new TwigFunction('cnerta_breadcrumb_get', array($this, 'get')),
+            new TwigFunction('cnerta_breadcrumb_render', array($this, 'render'), array('is_safe' => array('html'))),
         );
     }
 
