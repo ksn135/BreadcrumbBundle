@@ -31,7 +31,7 @@ class ContainerAwareProvider implements RendererProviderInterface
         return $this->container->get($this->rendererIds[$name]);
     }
 
-    public function has($name)
+    public function has(string $name): bool
     {
         return isset($this->rendererIds[$name]);
     }
