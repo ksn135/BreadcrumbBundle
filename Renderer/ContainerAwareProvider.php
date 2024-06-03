@@ -18,7 +18,7 @@ class ContainerAwareProvider implements RendererProviderInterface
         $this->defaultRenderer = $defaultRenderer;
     }
 
-    public function get(?string $name = null)
+    public function get(?string $name = null): Knp\Menu\Renderer\RendererInterface
     {
         if (null === $name) {
             $name = $this->defaultRenderer;
