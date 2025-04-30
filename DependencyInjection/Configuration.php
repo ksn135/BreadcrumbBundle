@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritDoc}
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('cnerta_breadcrumb');
         $node        = $treeBuilder->getRootNode();
@@ -29,8 +29,8 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->booleanNode('templating')->defaultFalse()->end()
                 ->scalarNode('default_renderer')->cannotBeEmpty()->defaultValue('twig')->end()
-                ;
-        
+        ;
+
         return $treeBuilder;
     }
 }
