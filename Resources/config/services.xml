@@ -25,7 +25,7 @@
             <argument type="service" id="cnerta_breadcrumb.helper" />
         </service>
 
-        <service id="cnerta_breadcrumb.renderer.twig" class="%cnerta_breadcrumb.renderer.twig.class%">
+        <service id="cnerta_breadcrumb.renderer.twig" class="%cnerta_breadcrumb.renderer.twig.class%"  public="true">
             <tag name="cnerta_breadcrumb.renderer" alias="twig" />
             <argument type="service" id="twig" />
             <argument>%cnerta_breadcrumb.renderer.twig.template%</argument>
