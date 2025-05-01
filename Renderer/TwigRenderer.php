@@ -4,18 +4,18 @@ namespace Cnerta\BreadcrumbBundle\Renderer;
 
 use Knp\Menu\Matcher\MatcherInterface;
 use Twig\Environment;
-
-class TwigRenderer
+use Knp\Menu\Renderer\RendererInterface;
+class TwigRenderer implements RendererInterface
 {
     /**
-     * @var \Twig_Environment
+     * @var Environment
      */
     private $environment;
     private $matcher;
     private $defaultOptions;
 
     /**
-     * @param \Twig_Environment $environment
+     * @param Environment $environment
      * @param string            $template
      * @param MatcherInterface  $matcher
      * @param array             $defaultOptions
@@ -38,14 +38,14 @@ class TwigRenderer
         ), $defaultOptions);
     }
 
-    public function render($items, array $options = array())
+    public function render(array|\Knp\Menu\ItemInterface $items, array $options = array()): string
     {
         $options = array_merge($this->defaultOptions, $options);
 
         $template = $options['template'];
 
-        if (!$template instanceof \Twig_Template) {
-            $template = $this->environment->loadTemplate($template);
+        if (!$template instanceof \Twig\Template) {
+            $template = $this->environment->load($template);
         }
 
         $block = $options['compressed'] ? 'compressed_root' : 'root';
